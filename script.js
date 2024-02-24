@@ -21,13 +21,14 @@ if (close){
 const itemBody = document.querySelector("#item-body");
 const itemTotal=document.querySelectorAll(".total");
 const finalTotal1=document.querySelector(".final-total1");
-console.log(finalTotal1);
+const font=document.querySelector("font");
 const finalTotal2=document.querySelector(".final-total2");
 
 
 itemBody.addEventListener("change", (e) => {
     const targetedElem = e.target;
     const itemNo = Number(targetedElem.value);
+    font.textContent="";
     const itemPrice = Number(targetedElem.parentNode.previousElementSibling.textContent.slice(1));
     var itemTotalPrice = itemNo * itemPrice;
     targetedElem.parentNode.nextElementSibling.textContent = `$${itemTotalPrice}`;
@@ -39,6 +40,7 @@ itemBody.addEventListener("change", (e) => {
     }
     finalTotal1.textContent=`$${finalTotalPrice}`;
     finalTotal2.textContent=`$${finalTotalPrice}`;
+    
 
 
 
